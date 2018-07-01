@@ -1,8 +1,9 @@
-from flask import Blueprint
+# from flask import Blueprint
+#
+# web = Blueprint('web','__name__')
+# #循环导入
 
-web = Blueprint('web','__name__')
 
-from app.web import book
-from app.web import user
+from app.web.book import web
+from app.web.user import web
 
-#循环导入

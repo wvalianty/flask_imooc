@@ -1,4 +1,5 @@
-from httper import HTTP
+from app.lib.httper import HTTP
+from flask import current_app
 class YuShuBook:
     isbn_url = 'http://t.yushu.im/v2/book/isbn/{}'
     keyword_url = 'http://t.yushu.im/v2/book/search?q={}&count={}&start={}'

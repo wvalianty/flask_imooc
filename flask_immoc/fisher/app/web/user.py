@@ -1,5 +1,7 @@
-from app.web import web
+from app.web.blueprint_init import web
+from flask import jsonify
 
 @web.route("/user")
 def login():
-    pass
+    print("yes")
+    return jsonify({"msg":"just a test"})
