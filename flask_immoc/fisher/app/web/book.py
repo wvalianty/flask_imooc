@@ -29,7 +29,7 @@ def search():
         if isbn_or_key == 'isbn':
             result = YuShuBook.search_by_isbn(q)
         if isbn_or_key == 'key':
-            result = YuShuBook.search_by_keyword(q)
+            result = YuShuBook.search_by_keyword(q,page)
         return jsonify(result)
     else:
         return jsonify(form.errors)

@@ -1,8 +1,8 @@
-from flask import Flask
+from flask import Flask,current_app
 import os
 
 def import_from():
-    if os.path.exists('app/config/secure'):
+    if os.path.exists(os.path.realpath('./app/config/secure.py')):
         return "app.config.secure"
     else:
         return "app.config.setting"
