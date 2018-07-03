@@ -1,2 +1,3 @@
 *.pyc
 .idea*
+fisher/app/config/secure.py

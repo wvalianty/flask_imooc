@@ -4,6 +4,7 @@ from app.lib.httper import HTTP
 from app.spider.yushu_book import YuShuBook
 from app.forms.book import SearchForm
 from app.web.blueprint_init import web
+from app.view_models.book import BookViewModel
 
 #路径参数
 # @web.route("/book/search/<q>/<page>")
@@ -15,7 +16,7 @@ from app.web.blueprint_init import web
 #         result = YuShuBook.search_by_keyword(q)
 #     return jsonify(result)
 
-
+#接口好用不好用考量   返回数据全面   返回数据好用  搜索  关键字  条数
 @web.route("/book/search")
 def search():
     # q = request.args['q']
@@ -28,8 +29,10 @@ def search():
         isbn_or_key = is_isbn_or_key(q)
         if isbn_or_key == 'isbn':
             result = YuShuBook.search_by_isbn(q)
+            result = BookViewModel.package_single(result,q)
         if isbn_or_key == 'key':
             result = YuShuBook.search_by_keyword(q,page)
+            result = BookViewModel.package_collection(result,q)
         return jsonify(result)
     else:
         return jsonify(form.errors)

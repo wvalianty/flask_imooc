@@ -7,7 +7,6 @@ class YuShuBook:
     @classmethod
     def search_by_isbn(cls,isbn):
         url = cls.isbn_url.format(isbn)
-        print(url)
         result = HTTP.get(url)
         return result
     @classmethod
