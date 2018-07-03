@@ -1,7 +1,7 @@
 from flask import jsonify,request
 from app.lib.helper import is_isbn_or_key
 from app.lib.httper import HTTP
-from app.lib.yushu_book import YuShuBook
+from app.spider.yushu_book import YuShuBook
 from app.forms.book import SearchForm
 from app.web.blueprint_init import web
 
