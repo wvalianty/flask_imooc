@@ -3,8 +3,8 @@ import os
 from app.models.book import db
 
 def import_from():
-    if os.path.exists(os.path.realpath('./app/config/secure.py')):
-        return "app.config.secure"
+    if os.path.exists(os.path.realpath('./app/config/secure_.py')):
+        return "app.config.secure_"
     else:
         return "app.config.setting"
 
