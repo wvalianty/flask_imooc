@@ -1,4 +1,4 @@
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 DEBUG = True
-SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:1a2b3c4d5f@47.97.86.161:3306/fisher"
+SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root::3306/fisher"
 PER_PAGE = 15
